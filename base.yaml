@@ -26,14 +26,13 @@ logger:
 api:
   encryption:
     key: "${api_encryption}"
-
-mqtt:
-  broker: "${mqtt_broker}"
-  topic_prefix: "${mqtt_topic_prefix}"
-
 ota:
   password: "${esp_ota}"
 
 # Enable web hosting when wifi can not connect to be able to
 # update wifi connection or firmware
 captive_portal:
+
+mqtt:
+  broker: "${mqtt_broker}"
+  topic_prefix: "${mqtt_topic_prefix}"
