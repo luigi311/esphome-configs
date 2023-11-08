@@ -20,9 +20,6 @@ wifi:
     ssid: "${device_name}"
     password: "${wifi_password}"
 
-logger:
-  baud_rate: 0  # (UART logging interferes with cse7766)
-
 api:
   encryption:
     key: "${api_encryption}"
