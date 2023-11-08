@@ -1,4 +1,7 @@
 # Device Specific Config
+logger:
+  baud_rate: 0 # (UART logging interferes with cse7766)
+
 uart:
   rx_pin: RX
   baud_rate: 4800
