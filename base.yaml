@@ -1,38 +1,38 @@
 # Basic Config
 esphome:
-  name: $device_name
-  platform: $device_platform
-  board: $device_board
+  name: "${device_name}"
+  platform: "${device_platform}"
+  board: "${device_board}"
 
 wifi:
-  ssid: $wifi_ssid
-  password: $wifi_password
+  ssid: "${wifi_ssid}"
+  password: "${wifi_password}"
    # Static IP
   manual_ip:
-    static_ip: $wifi_ip
-    gateway: $network_gateway
-    subnet: $network_subnet
-    dns1: $network_dns1
-    dns2: $network_dns2
-  domain: $network_domain
+    static_ip: "${wifi_ip}"
+    gateway: "${network_gateway}"
+    subnet: "${network_subnet}"
+    dns1: "${network_dns1}"
+    dns2: "${network_dns2}"
+  domain: "${network_domain}"
   # Create AP if not able to connect to wifi
   ap:
-    ssid: $device_name
-    password: $wifi_password
+    ssid: "${device_name}"
+    password: "${wifi_password}"
 
 logger:
   baud_rate: 0  # (UART logging interferes with cse7766)
 
 api:
   encryption:
-    key: $api_encryption
+    key: "${api_encryption}"
 
 mqtt:
-  broker: $mqtt_broker
-  topic_prefix: $mqtt_topic_prefix
+  broker: "${mqtt_broker}"
+  topic_prefix: "${mqtt_topic_prefix}"
 
 ota:
-  password: $esp_ota
+  password: "${esp_ota}"
 
 # Enable web hosting when wifi can not connect to be able to
 # update wifi connection or firmware
