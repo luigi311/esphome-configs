@@ -22,7 +22,7 @@ sensor:
   - platform: wifi_signal
     id: wifi_connection
     name: "${device_name} WiFi Signal"
-    update_interval: 10s
+    update_interval: 5s
   - platform: cse7766
     current:
       name: "${device_name} Current"
@@ -34,7 +34,7 @@ sensor:
       name: "${device_name} Power"
       accuracy_decimals: 1
       id: my_power
-    update_interval: 10s
+    update_interval: 5s
   - platform: total_daily_energy
     name: "${device_name} Daily Energy"
     power_id: my_power
