@@ -24,7 +24,8 @@ api:
   encryption:
     key: "${api_encryption}"
 ota:
-  password: "${esp_ota}"
+  - platform: esphome
+    password: "${esp_ota}"
 
 # Enable web hosting when wifi can not connect to be able to
 # update wifi connection or firmware
