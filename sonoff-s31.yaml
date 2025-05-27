@@ -5,6 +5,7 @@ logger:
 uart:
   rx_pin: RX
   baud_rate: 4800
+  parity: EVEN # required since 2024-08
 
 binary_sensor:
   - platform: gpio
