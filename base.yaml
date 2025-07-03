@@ -1,8 +1,6 @@
 # Basic Config
 esphome:
   name: "${device_name}"
-  platform: "${device_platform}"
-  board: "${device_board}"
 
 wifi:
   ssid: "${wifi_ssid}"
