@@ -57,19 +57,19 @@ sensor:
         - throttle_average: 2s
 
     energy:
-      name: "Energy"
+      name: "${device_name} Energy"
       accuracy_decimals: 1
       filters:
         - throttle_average: 2s
 
     apparent_power:
-      name: "Apparent Power"
+      name: "${device_name} Apparent Power"
       accuracy_decimals: 1
       filters:
         - throttle_average: 2s
 
     power_factor:
-      name: "Power Factor"
+      name: "${device_name} Power Factor"
       accuracy_decimals: 1
       filters:
         - throttle_average: 2s
