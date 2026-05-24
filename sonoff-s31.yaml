@@ -24,32 +24,68 @@ sensor:
     id: wifi_connection
     name: "${device_name} WiFi Signal"
     update_interval: 2s
+
   - platform: cse7766
     current:
       name: "${device_name} Current"
+      id: current
+      state_class: measurement
+      device_class: current
+      unit_of_measurement: A
       accuracy_decimals: 1
       filters:
         - throttle_average: 2s
+    
     voltage:
       name: "${device_name} Voltage"
+      id: voltage
+      state_class: measurement
+      device_class: voltage
+      unit_of_measurement: V
       accuracy_decimals: 1
       filters:
         - throttle_average: 2s
+    
     power:
       name: "${device_name} Power"
+      id: power
+      state_class: measurement
+      device_class: power
+      unit_of_measurement: W
       accuracy_decimals: 1
-      id: my_power
       filters:
         - throttle_average: 2s
+
+    energy:
+      name: "Energy"
+      accuracy_decimals: 1
+      filters:
+        - throttle_average: 2s
+
+    apparent_power:
+      name: "Apparent Power"
+      accuracy_decimals: 1
+      filters:
+        - throttle_average: 2s
+
+    power_factor:
+      name: "Power Factor"
+      accuracy_decimals: 1
+      filters:
+        - throttle_average: 2s
+  
   - platform: total_daily_energy
     name: "${device_name} Daily Energy"
-    power_id: my_power
+    power_id: power
+  
   - platform: integration
     name: "${device_name} Energy Spent"
-    sensor: my_power
+    sensor: power
     time_unit: h
-    state_class: total_increasing
     unit_of_measurement: kWh
+    state_class: total_increasing
+    device_class: energy
+    accuracy_decimals: 2
     filters:
       - multiply: 0.001
 
@@ -61,8 +97,8 @@ switch:
     restore_mode: ALWAYS_ON
 
 time:
-  - platform: sntp
-    id: my_time
+  - platform: homeassistant
+    id: ha_time
 
 status_led:
   pin:
