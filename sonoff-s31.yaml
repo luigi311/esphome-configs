@@ -45,7 +45,7 @@ sensor:
     name: "${device_name} Daily Energy"
     power_id: my_power
   - platform: integration
-    name: "${device_name} Energy"
+    name: "${device_name} Energy Spent"
     sensor: my_power
     time_unit: h
     state_class: measurement
