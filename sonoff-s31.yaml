@@ -77,17 +77,6 @@ sensor:
   - platform: total_daily_energy
     name: "${device_name} Daily Energy"
     power_id: power
-  
-  - platform: integration
-    name: "${device_name} Energy Spent"
-    sensor: power
-    time_unit: h
-    unit_of_measurement: kWh
-    state_class: total_increasing
-    device_class: energy
-    accuracy_decimals: 2
-    filters:
-      - multiply: 0.001
 
 switch:
   - platform: gpio
