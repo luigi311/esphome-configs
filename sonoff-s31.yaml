@@ -32,7 +32,7 @@ sensor:
       state_class: measurement
       device_class: current
       unit_of_measurement: A
-      accuracy_decimals: 1
+      accuracy_decimals: 2
       filters:
         - throttle_average: 2s
     
@@ -42,7 +42,7 @@ sensor:
       state_class: measurement
       device_class: voltage
       unit_of_measurement: V
-      accuracy_decimals: 1
+      accuracy_decimals: 2
       filters:
         - throttle_average: 2s
     
@@ -52,25 +52,25 @@ sensor:
       state_class: measurement
       device_class: power
       unit_of_measurement: W
-      accuracy_decimals: 1
+      accuracy_decimals: 2
       filters:
         - throttle_average: 2s
 
     energy:
       name: "${device_name} Energy"
-      accuracy_decimals: 1
+      accuracy_decimals: 2
       filters:
         - throttle_average: 2s
 
     apparent_power:
       name: "${device_name} Apparent Power"
-      accuracy_decimals: 1
+      accuracy_decimals: 2
       filters:
         - throttle_average: 2s
 
     power_factor:
       name: "${device_name} Power Factor"
-      accuracy_decimals: 1
+      accuracy_decimals: 2
       filters:
         - throttle_average: 2s
   
