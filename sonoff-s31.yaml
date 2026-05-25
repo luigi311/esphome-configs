@@ -94,9 +94,3 @@ status_led:
   pin:
     number: GPIO13
     inverted: True
-
-button:
-  - platform: template
-    name: "kWh reset"
-    on_press:
-      - cse7766.reset_energy: cse7766_1
