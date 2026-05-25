@@ -26,6 +26,7 @@ sensor:
     update_interval: 2s
 
   - platform: cse7766
+    id: cse7766_1
     current:
       name: "${device_name} Current"
       id: current
@@ -93,3 +94,9 @@ status_led:
   pin:
     number: GPIO13
     inverted: True
+
+button:
+  - platform: template
+    name: "kWh reset"
+    on_press:
+      - cse7766.reset_energy: cse7766_1
